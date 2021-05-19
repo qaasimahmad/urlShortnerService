@@ -16,9 +16,6 @@ Welcome to __Money Acccounting Service__ break down
 
 - eslint
 
-
-+ [check this repo to understand di basically](https://bitbucket.org/terragonengineering/masterpass-api/src)
-
 *File Structure*
 
 - APP content in app directory
