@@ -79,12 +79,12 @@ npm run test
 
 ===============================================================================================================
 # Routes
-Name        | EndPoint(s)                               | Function Called 
----------:  | :------------                             |:--------------:
-user_account| /api/accountBalance                       | `get_account_balance`
-            | /api/transactionHistory                   | `get_transaction_history`
-            | /api/accountDetails/:accountNumber        | `get_account_details`
-            | /api/commitTransaction                    | `commit_transaction`
+Name        | EndPoint(s)                       
+---------:  | :--------------------------------                    
+user_account| /api/accountBalance              
+user_account| /api/transactionHistory           
+user_account| /api/accountDetails/:accountNumber`
+user_account| /api/commitTransaction
 
 
 # Check Balance
@@ -113,4 +113,5 @@ _Sample Response
 ~~~~
 
 `Please check the postman collection for the complete details`
+
 **END**
