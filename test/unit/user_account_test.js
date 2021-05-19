@@ -51,7 +51,6 @@ describe('Money Accounting App', () => {
 
     it('should debit user with the amount provided if type is debit', () => {
       AccountServices.commit_transaction(testAccountNumber, { type: 'debit', amount: 100 }, (response, code) => {
-        console.log('Debit-Result>>', response);
         if (code == 200) {
           expect(response.data.balance).to.be.equal(1900);
         }
