@@ -26,8 +26,6 @@ Welcome to __Money Acccounting Service__ break down
 
         * config
 
-    * constants
-
     * controllers
 
     * libraries
