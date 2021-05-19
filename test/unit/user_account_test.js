@@ -57,7 +57,7 @@ describe('Money Accounting App', () => {
       });
     });
 
-    it('no debit occurs when balance is less than amount provided', () => {
+    it('should not debit the account when balance is less than amount provided', () => {
       AccountServices.commit_transaction(testAccountNumber, { type: 'debit', amount: 10000 }, (response, code) => {
         expect(code === 422 && response === 'Insufficient balance');
       });
