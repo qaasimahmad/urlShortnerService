@@ -19,4 +19,4 @@ app.use('/api', routes);
 
 app.listen(config.port);
 
-logger.info(`Application is listening on port ${config.init_port}`);
+logger.info(`Application is listening on port ${config.port}`);

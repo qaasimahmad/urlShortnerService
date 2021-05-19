@@ -11,6 +11,9 @@ const {
     commit_transaction
   } = require('../controllers/user_account');
 
+router.get('/', function (req, res, next) {
+    res.json({data: "Welcome to Money Accounting App"})
+})
 router.get('/accountBalance', get_available_balance);
 router.get('/transactionHistory', get_transaction_history);
 router.get('/accountDetails/:accountNumber', get_account_details);
