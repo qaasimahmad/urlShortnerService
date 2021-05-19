@@ -6,30 +6,30 @@ const lock = new AsyncLock();
 const AppServices = {
 
   commit_transaction(accountNumber, body, callback) {
-    const { amount, type } = body;
-
-    const validTypes = ['credit', 'debit'];
-
-    if (Number.isNaN(amount) || !validTypes.includes(type)) {
-      return callback({ err: true, response: 'Invalid amount provided' }, 400);
-    }
-    if (type === 'credit') {
-      this.credit_account(accountNumber, amount, (response, code) => {
-        if (code === 200) {
-          return callback(response, code);
+    lock.acquire(accountNumber, () => {
+        const { amount, type } = body;
+        const validTypes = ['credit', 'debit'];
+        if (Number.isNaN(amount) || !validTypes.includes(type)) {
+        return callback({ err: true, response: 'Invalid amount provided' }, 400);
         }
+        if (type === 'credit') {
+        this.credit_account(accountNumber, amount, (response, code) => {
+            if (code === 200) {
+            return callback(response, code);
+            }
 
-        return callback(response, code);
-      });
-    } else {
-      this.debit_account(accountNumber, amount, (response, code) => {
-        if (code === 200) {
-          return callback(response, code);
+            return callback(response, code);
+        });
+        } else {
+        this.debit_account(accountNumber, amount, (response, code) => {
+            if (code === 200) {
+            return callback(response, code);
+            }
+
+            return callback(response, code);
+        });
         }
-
-        return callback(response, code);
-      });
-    }
+    })
   },
 
   save_transaction(data) {

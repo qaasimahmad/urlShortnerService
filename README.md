@@ -1,6 +1,6 @@
 # Welcome
 
-Welcome to __Money Acccounting Service__ break down
+Welcome to __Money Acccounting App__ break down
 
 *Technologies*
 
