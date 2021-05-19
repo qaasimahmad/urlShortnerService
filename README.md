@@ -82,9 +82,9 @@ npm run test
 Name        | EndPoint(s)                       
 ---------:  | :--------------------------------                    
 user_account| /api/accountBalance              
-            | /api/transactionHistory           
-            | /api/accountDetails/:accountNumber`
-            | /api/commitTransaction
+user_account| /api/transactionHistory           
+user_account| /api/accountDetails/:accountNumber`
+user_account| /api/commitTransaction
 
 
 # Check Balance
