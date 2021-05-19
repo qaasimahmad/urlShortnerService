@@ -64,7 +64,7 @@ npm start
 npm run test
 ```
 
-# POSTMAN COLLECTION
+# POSTMAN COLLECTION LINK
   + [checkout the postman collection here](https://www.getpostman.com/collections/14737bff6504b49f374b)
 
 # Things to Note
