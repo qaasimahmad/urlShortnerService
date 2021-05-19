@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  app:
+    container_name: app
+    build: .
+    command: npm start
+    volumes: 
+      - .:/app
+      - /app/node_modules
+    env_file: 
+      - ./config/config.js
+    ports:
+      - 2300:2300
