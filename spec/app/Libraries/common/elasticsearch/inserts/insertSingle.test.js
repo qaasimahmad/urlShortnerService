@@ -10,7 +10,7 @@ beforeEach( () =>{
 })
 
 describe.only( `The ${ name } function`, ()=>{
-  it('should return result as created if insert is successful', ()=>{
+  it("should return data with property 'result' on succcessful indexing ", ()=>{
 
     insertSingle( sampleIndexPayload, (err, result)=>{
       expect(err).deep.equal(undefined);
@@ -20,7 +20,7 @@ describe.only( `The ${ name } function`, ()=>{
           
   })
 
-  it('should return error if an error actually exists', ()=>{
+  it("should return error if an error occurs", ()=>{
 
     insertSingle( sampleIndexPayload, (err, result)=>{
       expect(err).deep.equal(err);
