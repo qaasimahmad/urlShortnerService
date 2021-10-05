@@ -1,9 +1,13 @@
 const express = require('express');
-const config = require('./app/config/config');
-const routes = require('./app/routes/user_account');
-const logger = require('./app/Libraries/logger');
+const config  = require('./app/config/config');
+const routes  = require('./app/routes/urlShortner');
+const logger  = require('./app/Libraries/logger');
 
 const app = express();
+
+const {host, userName, password} = config.elasticsearch;
+
+require('./app/Libraries/common/elasticsearch/createClient')(host, userName, password);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

@@ -1,15 +1,44 @@
 {
     "env": {
-        "browser": true,
-        "commonjs": true,
-        "es2021": true
-    },
-    "extends": [
-        "airbnb-base"
-    ],
+        "es6": true,
+        "node": true,
+        "mocha": true
+      },
+    "extends": ["eslint:recommended", "plugin:varspacing/recommended"],
+    "plugins": ["chai-expect", "mocha", "varspacing"],
     "parserOptions": {
-        "ecmaVersion": 12
+        "sourceType": "module",
+        "ecmaVersion": 9
     },
     "rules": {
+        "indent": [
+            "error",
+            2,
+            {
+              "VariableDeclarator": { "var": 2, "let": 2, "const": 3 }
+            }
+          ],
+          "key-spacing": ["error", { "align": "value" }],
+          "max-len": [
+            "error",
+            {
+              "code": 120,
+              "tabWidth": 2,
+              "ignoreComments": true,
+              "ignoreUrls": true,
+              "ignorePattern": "^.*= require\\( '.*' \\);?"
+            }
+          ],
+          "max-nested-callbacks": ["error", 4],
+          "max-params": ["error", 5],
+          "no-lonely-if": "error",
+          "no-multiple-empty-lines": ["error", { "max": 2 }],
+          "no-console": "error",
+          "no-debugger": "error",
+          "callback-return": "error",
+          "handle-callback-err": "error",
+          "id-blacklist": ["error", "data", "cb", "callback"],
+          "space-before-blocks": ["error", "never"],
+          "space-before-function-paren": ["error", "never"]
     }
 }

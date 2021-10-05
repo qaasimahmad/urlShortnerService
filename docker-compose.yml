@@ -1,14 +1,40 @@
 version: '3.7'
-
 services:
-  app:
-    container_name: app
+  api:
+    image: node:14.15.0
+    container_name: shortner-app
     build: .
-    command: npm start
-    volumes: 
-      - .:/app
-      - /app/node_modules
     env_file: 
-      - ./config/config.js
+      - ./.env
     ports:
       - 2300:2300
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run start
+    links:
+        - elasticsearch
+    depends_on:
+        - elasticsearch
+    networks: 
+      - esnet
+  elasticsearch:
+    container_name: shortner-elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.0.1
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+    logging:
+      driver: none
+    ports:
+      - 9300:9300
+      - 9200:9200
+    networks: 
+      - esnet
+volumes:
+  esdata:
+networks:
+  esnet:
