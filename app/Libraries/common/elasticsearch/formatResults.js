@@ -4,7 +4,7 @@ function formatResults(elasticSearchResults, onFormatted){
     ? elasticSearchResults.hits.hits.map((items => items['_source']))
     : [];
 
-  return onFormatted(result);
+  return onFormatted(null, result);
 }
 
 module.exports = formatResults;

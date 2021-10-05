@@ -1,16 +1,30 @@
-const moment             = require('moment');
-const sampleIndexPayload = {
+const moment                  = require('moment');
+const validSampleIndexPayload = {
   _index: 'sandbox',
   _type:  'urlData',
-  id:     'GVED1',
+  _id:    'GVED4',
   body:   {
     longUrl:   'https://www.facebook.com',
     shortUrl:  'bitlyshorturl/GVED1',
-    urlId:     'GVED1',
+    urlId:     'GVED4',
     metaData:  {},
     createdAt: moment(),
     updatedAt: moment()
   }
 }
 
-module.exports = sampleIndexPayload;
+const invalidSampleIndexPayload = {
+  _indexs: 'sandbox',
+  _type:   'urlData',
+  _id:     'GVED4',
+  body:    {
+    longUrl:   'https://www.facebook.com',
+    shortUrl:  'bitlyshorturl/GVED1',
+    urlId:     'GVED4',
+    metaData:  {},
+    createdAt: moment(),
+    updatedAt: moment()
+  }
+}
+module.exports                  = {invalidSampleIndexPayload, validSampleIndexPayload};
+
