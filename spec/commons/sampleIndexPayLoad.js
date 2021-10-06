@@ -8,8 +8,8 @@ const validSampleIndexPayload = {
     shortUrl:  'bitlyshorturl/GVED1',
     urlId:     'GVED4',
     metaData:  {},
-    createdAt: moment(),
-    updatedAt: moment()
+    createdAt: '2021-10-05T22:41:43.109Z',
+    updatedAt: '2021-10-05T22:41:43.109Z'
   }
 }
 
@@ -22,8 +22,8 @@ const invalidSampleIndexPayload = {
     shortUrl:  'bitlyshorturl/GVED1',
     urlId:     'GVED4',
     metaData:  {},
-    createdAt: moment(),
-    updatedAt: moment()
+    createdAt: '2021-10-05T22:41:43.109Z',
+    updatedAt: '2021-10-05T22:41:43.109Z'
   }
 }
 module.exports                  = {invalidSampleIndexPayload, validSampleIndexPayload};

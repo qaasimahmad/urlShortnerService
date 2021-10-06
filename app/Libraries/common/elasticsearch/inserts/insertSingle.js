@@ -11,6 +11,7 @@ function indexData(items, onIndexed){
     index,
     type,
     id,
+    refresh: true,
     body, 
   }, (err, result)=>{
     if(err) return onIndexed(err);
