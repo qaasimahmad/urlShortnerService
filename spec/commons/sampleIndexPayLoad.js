@@ -1,4 +1,3 @@
-const moment                  = require('moment');
 const validSampleIndexPayload = {
   _index: 'sandbox',
   _type:  'urlData',
@@ -9,9 +8,9 @@ const validSampleIndexPayload = {
     urlId:     'GVED4',
     metaData:  {},
     createdAt: '2021-10-05T22:41:43.109Z',
-    updatedAt: '2021-10-05T22:41:43.109Z'
-  }
-}
+    updatedAt: '2021-10-05T22:41:43.109Z',
+  },
+};
 
 const invalidSampleIndexPayload = {
   _indexs: 'sandbox',
@@ -23,8 +22,9 @@ const invalidSampleIndexPayload = {
     urlId:     'GVED4',
     metaData:  {},
     createdAt: '2021-10-05T22:41:43.109Z',
-    updatedAt: '2021-10-05T22:41:43.109Z'
-  }
-}
-module.exports                  = {invalidSampleIndexPayload, validSampleIndexPayload};
+    updatedAt: '2021-10-05T22:41:43.109Z',
+  },
+};
+
+module.exports                  = { invalidSampleIndexPayload, validSampleIndexPayload };
 

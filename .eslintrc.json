@@ -38,6 +38,27 @@
           "handle-callback-err": "error",
           "id-blacklist": ["error", "data", "cb", "callback"],
           "space-before-blocks": ["error", "never"],
-          "space-before-function-paren": ["error", "never"]
+          "space-before-function-paren": ["error", "never"],
+          "padding-line-between-statements": [
+            "error",
+            { "blankLine": "always", "prev": ["const", "let"], "next": "*" },
+            {
+              "blankLine": "any",
+              "prev": ["const", "let"],
+              "next": ["if", "const", "let"]
+            }
+          ],
+          "keyword-spacing": [
+            "error",
+            {
+              "overrides": {
+                "if": { "after": false },
+                "while": { "after": false },
+                "switch": { "after": false },
+                "try": { "after": false },
+                "catch": { "after": false }
+              }
+            }
+          ]
     }
 }

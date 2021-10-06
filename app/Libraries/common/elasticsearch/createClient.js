@@ -1,14 +1,12 @@
-const assert        = require( 'assert' );
-const elasticSearch = require( 'elasticsearch' );
+const assert        = require('assert');
+const elasticSearch = require('elasticsearch');
 
-function createClient( elasticURL ){
+function createClient(elasticURL){
+  assert(elasticURL, 'elasticsearchUrl must be passed');
 
-  assert( elasticURL, 'elasticsearchUrl must be passed' );
-
-  return new elasticSearch.Client( {
-    node: elasticURL
-  } );
-
+  return new elasticSearch.Client({
+    node: elasticURL,
+  });
 }
 
 module.exports = createClient;

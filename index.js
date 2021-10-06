@@ -5,9 +5,14 @@ const logger  = require('./app/Libraries/logger');
 
 const app = express();
 
-const {host, userName, password} = config.elasticsearch;
+const {
+  host, userName, password, indexName,
+} = config.elasticsearch;
 
 require('./app/Libraries/common/elasticsearch/createClient')(host, userName, password);
+const { indexExists } = require('./spec/commons/dbInitializer');
+
+indexExists(indexName);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

@@ -1,14 +1,17 @@
-const {elasticsearch:{
-    host:elasticUrl, 
-    indexName:index, 
-    documentType:type}} = require('../../../../config/config');
-  const createClient    = require('../createClient');
-  const client          = createClient(elasticUrl);
+const {
+  elasticsearch:{
+    host:elasticUrl,
+    indexName:index,
+    documentType:type,
+  },
+}                  = require('../../../../config/config');
+const createClient = require('../createClient');
 
-  const formatResult = require('../formatResults');
+const client = createClient(elasticUrl);
+
+const formatResult = require('../formatResults');
 
 function findByParam(searchParam, onFound){
-    console.log('Searchparam', searchParam);
   client.search({
     index,
     type,
@@ -16,21 +19,18 @@ function findByParam(searchParam, onFound){
       query: {
         bool: {
           must: {
-            term: searchParam
-          }
-        }
-      }
-    }
-  }, (err, result)=>{
-      console.log('Err', err);
-      console.log('RES', result);
+            term: searchParam,
+          },
+        },
+      },
+    },
+  }, (err, result) => {
     if(err) return onFound(err);
-    formatResult(result, (err, formattedResult)=>{
+    formatResult(result, (err, formattedResult) => {
       if(err) return onFound(err);
       return onFound(null, formattedResult);
-    })
-  })
-        
+    });
+  });
 }
 
 module.exports = findByParam;

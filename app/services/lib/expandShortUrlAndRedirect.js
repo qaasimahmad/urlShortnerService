@@ -1,13 +1,15 @@
-const findByParam = require('../../../app/Libraries/common/elasticsearch/search/findByParam');
+const findByParam = require('../../Libraries/common/elasticsearch/search/findByParam');
 
-function expandShorturlAndRedirect(urlId, onExpanded){
-    const searchParam = {'urlId.keyword': urlId};
+function expandShortUrlAndRedirect(urlId, onExpanded){
+  const searchParam = { 'urlId.keyword': urlId };
 
-    findByParam(searchParam, (err, result)=>{
-        console.log('ExpnadedResult >>', result);
-        if(err === null) return onExpanded(null, result[0].longUrl);
-        return onExpanded(err);
-    });
+  findByParam(searchParam, (err, result) => {
+    if(err === null){
+      return result.length > 0 ? onExpanded(null, result[0].longUrl)
+        : onExpanded(null, result);
+    }
+    return onExpanded(err);
+  });
 }
 
-module.exports = expandShorturlAndRedirect;
+module.exports = expandShortUrlAndRedirect;
