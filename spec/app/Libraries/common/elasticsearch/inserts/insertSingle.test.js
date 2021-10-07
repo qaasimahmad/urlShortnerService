@@ -8,7 +8,7 @@ const { indexExists } = require('../../../../../../app/Libraries/common/elastics
 
 indexExists(indexName, ()=>{});
 
-describe.only(`The ${name} function`, () => {
+describe(`The ${name} function`, () => {
   it("should return data with property 'result' on succcessful indexing ", (done) => {
     insertSingle(validSampleIndexPayload, (err, result) => {
       expect(err).deep.equal(null);

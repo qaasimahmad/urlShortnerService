@@ -2,7 +2,7 @@ const { uitPath, name } = resolveUitPath(__filename); // eslint-disable-line no-
 const findByParam       = require(uitPath);
 const { expect }        = require('chai');
 
-describe.only(`The ${name} function`, () => {
+describe(`The ${name} function`, () => {
   it('should return the longUrl that matches the urlId passed', (done) => {
     const searchParam = 'test123';
     const expected    = 'https://www.facebook.com';

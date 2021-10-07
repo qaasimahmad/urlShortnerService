@@ -2,7 +2,7 @@ const { uitPath, name } = resolveUitPath(__filename); // eslint-disable-line no-
 const findByParam       = require(uitPath);
 const { expect }        = require('chai');
 
-describe.only(`The ${name} function`, () => {
+describe(`The ${name} function`, () => {
   it('should return only one result for a urlId passed since its unique', (done) => {
     const searchParam = { 'urlId.keyword': 'GVED4' };
 

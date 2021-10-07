@@ -2,7 +2,7 @@ const { uitPath, name } = resolveUitPath(__filename); // eslint-disable-line no-
 const shortenUrl        = require(uitPath);
 const { expect }        = require('chai');
 
-describe.only(`The ${name} function`, () => {
+describe(`The ${name} function`, () => {
 
   it('should return an error if the url is invalid', (done) => {
     const longUrl = 'https';
