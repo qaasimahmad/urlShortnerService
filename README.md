@@ -55,7 +55,16 @@ npm install
  - This approach will make the instance avaialble on `localhost:9200` by default.
 2. Install a docker image and run the instance on docker.
 
+
+**Start App**
+
+```
+npm run start
+```
+
 **Docker Approach**
+
+- install docker on your machine. Mac users could install `Docker Desktop` for ease of use and management.
 
 ```
 docker pull docker.elastic.co/elasticsearch/elasticsearch:7.15.0
@@ -64,12 +73,14 @@ docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elas
 
 ```
 * Be sure that elasticsearch is running before starting the app to avoid unnecessary error meesages.
+* No need to do `npm install` if you will be using the `docker-compose` to run the app.
 
-**Start App**
+# Starting the app via docker
+```
+docker-compose build : To build the current state of the app.
+docker-compose run : To run the app.
+```
 
-```
-npm run start
-```
 
 ## Run Test
 
@@ -84,11 +95,9 @@ npm run tests
 
 1. Run the aplication at the `Root` of the project
 
-2. Call backs are used instead of the async/await approach
+2. The app is dockerized.
 
 3. PM2 is used to start and stop the app.
-
-
 
 ===============================================================================================================
 # Routes
