@@ -7,6 +7,7 @@ describe.only(`The ${name} function`, () => {
   const longUrl  = 'https://www.facebook.com';
 
   it('should save the payload in db and return a property result', (done) => {
+      
     const items = { shortUrl, longUrl };
 
     const expected = { shortUrl, message: 'shortened Url Created Successfully' };
@@ -16,5 +17,5 @@ describe.only(`The ${name} function`, () => {
       expect(result).deep.equal(expected);
       done();
     });
-  });
+  }).timeout(4000);
 });
