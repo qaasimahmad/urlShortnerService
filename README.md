@@ -139,11 +139,11 @@ _Sample Response
 _Sample GET request 
 
 ~~~~
-UrlId: 'MyJgzxqFK'
+urlId: 'MyJgzxqFK'
 ~~~~
 
 *Required Fields*
-UrlId
+urlId
 
 _Sample Response
 ~~~~
