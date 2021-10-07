@@ -51,9 +51,8 @@ npm install
 ```
 
 **Install ElasticSearch**
-1.  Install directly on your machine(Mac os, Windows, Linux):
+* Install directly on your machine(Mac os, Windows, Linux):
  - This approach will make the instance avaialble on `localhost:9200` by default.
-2. Install a docker image and run the instance on docker.
 
 
 **Start App**
