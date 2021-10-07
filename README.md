@@ -130,8 +130,7 @@ _Sample Response
 }
 ~~~~
 
-# Get the long url by ID and redirect to the long Url
-
+# Get the corresponding longUrl by ID and redirect to it
 - This redirects to the corresponding longUrl
 - Takes a urlId as `route param`.
 
