@@ -12,7 +12,7 @@ const UrlShortnerController = {
       const items = { shortUrl: result, longUrl };
 
       buildPayloadAndSave(items, (err, result) => {
-        if(err === null) return res.status(200).json({ result });
+        if(err === null) return res.status(200).json({ error: false, result });
       });
     });
   },
@@ -22,7 +22,7 @@ const UrlShortnerController = {
 
     expandShortUrlAndRedirect(urlId, (err, result) => {
       if(err === null){
-        return result.length === 0 ? res.status(404).json({result})
+        return result.length === 0 ? res.status(404).json({error: true, result})
           : res.redirect(result);
       }
       return res.status(500).json('Unexpected Error Encountered!');
