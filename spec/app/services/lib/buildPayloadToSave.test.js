@@ -6,8 +6,8 @@ describe.only(`The ${name} function`, () => {
   const shortUrl = 'http//:localhost:2300/api/test123';
 
   it('should save the payload in db and return a property result', (done) => {
-    const longUrl  = 'https://www.facebook.com';
-    const items = { shortUrl, longUrl };
+    const longUrl = 'https://www.facebook.com';
+    const items   = { shortUrl, longUrl };
 
     const expected = { shortUrl, message: 'shortened Url Created Successfully' };
 
@@ -19,8 +19,8 @@ describe.only(`The ${name} function`, () => {
   }).timeout(5000);
 
   it('should return an error if the url is invalid', (done) => {
-    const longUrl  = 'https://www.indicinia.com';
-    const items = { shortUrl, longUrl };
+    const longUrl = 'https://www.indicinia.com';
+    const items   = { shortUrl, longUrl };
 
     buildPayloadAndSave(items, (err, result) => {
       expect(err).equal(err);
