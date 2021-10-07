@@ -51,7 +51,7 @@
   },
   "scripts": {
     "tests": "mocha --require ./spec/.config/bootstrap.js --colors --require babel-core/register ./spec/**/*.test.js",
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
