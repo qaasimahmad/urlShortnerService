@@ -57,5 +57,3 @@ function indexExists(indexName, onDone){
 }
 
 module.exports = { indexExists, deleteIndex, createIndex, client };
-
-// module.exports = createClient;

@@ -1,7 +1,6 @@
 const {
   indexName:index,
-  documentType:type,
-}                  = require('../../../../config/config');
+  documentType:type} = require('../../../../config/config');
 
 const {client} = require('../connection');
 
