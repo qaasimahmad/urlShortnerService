@@ -89,7 +89,7 @@ npm run tests
 ```
 
 # POSTMAN COLLECTION LINK
-  + [checkout the postman collection here](https://www.getpostman.com/collections/14737bff6504b49f374b)
+  + [checkout the postman collection here](https://www.getpostman.com/collections/fcd16f499e0541b6432c)
 
 # Things to Note
 
