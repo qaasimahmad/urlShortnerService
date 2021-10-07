@@ -1,11 +1,9 @@
 const {
-  elasticUrl,
   indexName:index,
   documentType:type,
 }                  = require('../../../../config/config');
-const createClient = require('../createClient');
 
-const client = createClient(elasticUrl);
+const {client} = require('../connection');
 
 const formatResult = require('../formatResults');
 

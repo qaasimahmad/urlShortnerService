@@ -9,7 +9,7 @@ function shortenUrl(longUrl, onShortened){
   if(isValidUrl.isUri(longUrl)){
     isExistsLongUrl(longUrl, (err, result) => {
       if(err !== null) return onShortened(err);
-      else if(result.length === 0) logger.info('longUrl not found');
+      else if(result.length === 0) logger.info('longUrl not found..');
       const urlId    = shortid.generate();
       const shortUrl = `${baseUrl}/${urlId}`;
 

@@ -1,7 +1,4 @@
-const createClient   = require('../createClient');
-const { elasticUrl } = require('../../../../config/config');
-
-const client = createClient(elasticUrl);
+const {client} = require('../connection');
 
 function indexData(items, onIndexed){
   const {

@@ -50,7 +50,8 @@
   },
   "scripts": {
     "tests": "mocha --require ./spec/.config/bootstrap.js --colors --require babel-core/register ./spec/**/*.test.js",
-    "start": "nodemon index.js"
+    "start": "pm2-runtime start index.js --name node_app",
+    "stop": "pm2-runtime stop node_app"
   },
   "repository": {
     "type": "git",

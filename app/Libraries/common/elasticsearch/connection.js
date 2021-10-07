@@ -1,8 +1,21 @@
-const assert = require('assert');
+const assert        = require('assert');
+const elasticSearch = require('elasticsearch');
+const logger        = require('../../logger');
+const {elasticUrl}  = require('../../../config/config')
 
-const { elasticUrl } = require('../../../config/config');
-const client         = require('./createClient')(elasticUrl); // eslint-disable-line max-len
-const logger         = require('../../logger');
+const client = new elasticSearch.Client({
+  host: elasticUrl,
+});
+
+client.ping({
+  requestTimeout: 30000,
+}, function(error){
+  if(error){
+    logger.error('elasticsearch cluster is down!');
+  } else {
+    logger.info('elasticsearh is up and running ::)');
+  }
+});
 
 function deleteIndex(indexName, onDeleted){
   assert(indexName, 'Name of the index must be specified for this operation');
@@ -43,4 +56,6 @@ function indexExists(indexName, onDone){
   });
 }
 
-module.exports = { indexExists, deleteIndex, createIndex };
+module.exports = { indexExists, deleteIndex, createIndex, client };
+
+// module.exports = createClient;

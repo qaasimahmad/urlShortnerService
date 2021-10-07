@@ -6,7 +6,7 @@ const logger  = require('./app/Libraries/logger');
 const app = express();
 
 const {
-  elasticUrl, indexName,
+  indexName,
 } = config;
 
 const { indexExists } = require('./app/Libraries/common/elasticsearch/connection');
