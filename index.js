@@ -11,9 +11,7 @@ const {
 
 const { indexExists } = require('./app/Libraries/common/elasticsearch/connection');
 
-indexExists(indexName, ()=>{
-
-});
+indexExists(indexName, ()=>{});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
