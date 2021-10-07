@@ -6,12 +6,12 @@ const insertSingle                = require('../../Libraries/common/elasticsearc
 
 function buildPayloadAndSave(items, onSaved){
   const { longUrl, shortUrl } = items;
-  const urlId                 = shortUrl.split('/')[4];
+  const urlId                 = shortUrl.split('/')[ 4 ];
 
   const stream = requestStream(longUrl);
 
   stream.on('meta', (meta) => {
-    const metaData = pick(meta, ['status', 'responseHeaders.server', 'cookieJar']);
+    const metaData = pick(meta, [ 'status', 'responseHeaders.server', 'cookieJar' ]);
     const payLoad  = {
       _index: indexName,
       _type:  documentType,

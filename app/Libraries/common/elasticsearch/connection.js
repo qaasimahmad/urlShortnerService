@@ -47,8 +47,8 @@ function indexExists(indexName, onDone){
     if(!resp){
       logger.info(`${indexName} does not exist`);
       createIndex(indexName, (err) => {
-        if(err) return onDone(logger.info('Failed to Create Index'));
-        return logger.info('Index Creation Successful!');
+        if(err === null) return onDone(logger.info('Failed to Create Index'));
+        return onDone(logger.info('Index Creation Successful!'));
       });
     } else {
       return logger.info(`${indexName} already exists`);

@@ -19,6 +19,6 @@ function shortenUrl(longUrl, onShortened){
   else {
     return onShortened({ status: 400, result: `url ${longUrl} is invalid!` });
   }
-  
+
 }
 module.exports = shortenUrl;

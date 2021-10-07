@@ -4,7 +4,7 @@ const config = {
   elasticUrl:   process.env.ELASTIC_URL,
   indexName:    'sandbox',
   documentType: 'urlData'
-  
+
 };
 
 module.exports = config;

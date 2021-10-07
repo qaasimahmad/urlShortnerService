@@ -5,7 +5,7 @@ function expandShortUrlAndRedirect(urlId, onExpanded){
 
   findByParam(searchParam, (err, result) => {
     if(err === null){
-      return result.length > 0 ? onExpanded(null, result[0].longUrl)
+      return result.length > 0 ? onExpanded(null, result[ 0 ].longUrl)
         : onExpanded(null, result);
     }
     return onExpanded(err);

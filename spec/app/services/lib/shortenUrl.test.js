@@ -20,7 +20,7 @@ describe.only(`The ${name} function`, () => {
     const longUrl = 'https://www.facebook.com';
 
     shortenUrl(longUrl, (err, result) => {
-      const expected = result.split('/')[0];
+      const expected = result.split('/')[ 0 ];
 
       expect(result).to.be.a('string').and.satisfy((url) => url.startsWith(expected));
       expect(err).to.equal(null);
