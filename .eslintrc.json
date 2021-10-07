@@ -59,6 +59,9 @@
                 "catch": { "after": false }
               }
             }
-          ]
+          ],
+          "no-trailing-spaces": ["error", { "skipBlankLines": false }],
+          "array-bracket-spacing": ["error", "always"],
+          "computed-property-spacing": ["error", "always"]
     }
 }
