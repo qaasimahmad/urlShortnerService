@@ -3,7 +3,7 @@ const buildPayloadAndSave = require(uitPath);
 const { expect }          = require('chai');
 
 describe.only(`The ${name} function`, () => {
-  const shortUrl = 'http:localhost:2300/api/test123';
+  const shortUrl = 'http//:localhost:2300/api/test123';
   const longUrl  = 'https://www.facebook.com';
 
   it('should save the payload in db and return a property result', (done) => {

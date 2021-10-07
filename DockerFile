@@ -1,10 +1,10 @@
   
 FROM node:14.15.0
 
-RUN mkdir -p /app
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY package.json ./
+COPY package*.json ./
+
 RUN npm install
 RUN npm install -g pm2
 
@@ -13,4 +13,4 @@ COPY . ./
 EXPOSE 2300
 EXPOSE 9200
 
-CMD ["npm", "prestart"]
+CMD npm run start

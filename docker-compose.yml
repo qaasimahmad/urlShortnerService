@@ -2,39 +2,46 @@ version: '3.7'
 services:
   api:
     image: node:14.15.0
-    container_name: shortner-app
+    container_name: tqd-node
     build: .
-    env_file: 
-      - ./.env
     ports:
       - 2300:2300
+    environment:
+     - NODE_ENV=local
+     - BASE_URL=http://localhost:2300/api
+     - PORT=2300
+     - ELASTIC_URL=http://elasticsearch:9200
     volumes:
-      - .:/app
-      - /app/node_modules
+      - .:/usr/src/app
     command: npm run start
     links:
         - elasticsearch
     depends_on:
         - elasticsearch
     networks: 
-      - esnet
+      - elastic
   elasticsearch:
-    container_name: shortner-elasticsearch
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.0.1
-    volumes:
-      - esdata:/usr/share/elasticsearch/data
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.0
+    container_name: elasticsearch
     environment:
+      - node.name=elasticsearch
+      - cluster.name=es-docker-cluster
+      - cluster.initial_master_nodes=elasticsearch
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-      - discovery.type=single-node
-    logging:
-      driver: none
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
     ports:
-      - 9300:9300
       - 9200:9200
-    networks: 
-      - esnet
+      - 9300:9300
+    networks:
+      - elastic
 volumes:
   esdata:
 networks:
-  esnet:
+  elastic:
+    driver: bridge

@@ -1,12 +1,12 @@
-const pick                                          = require('lodash/pick');
-const moment                                        = require('moment');
-const requestStream                                 = require('../../Libraries/common/request/stream');
-const { elasticsearch:{ indexName, documentType } } = require('../../config/config');
-const insertSingle                                  = require('../../Libraries/common/elasticsearch/inserts/insertSingle');// eslint-disable-line max-len
+const pick                        = require('lodash/pick');
+const moment                      = require('moment');
+const requestStream               = require('../../Libraries/common/request/stream');
+const { indexName, documentType } = require('../../config/config');
+const insertSingle                = require('../../Libraries/common/elasticsearch/inserts/insertSingle');// eslint-disable-line max-len
 
 function buildPayloadAndSave(items, onSaved){
   const { longUrl, shortUrl } = items;
-  const urlId                 = shortUrl.split('/')[2];
+  const urlId                 = shortUrl.split('/')[4];
 
   const stream = requestStream(longUrl);
 

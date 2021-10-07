@@ -1,9 +1,7 @@
 const {
-  elasticsearch:{
-    host:elasticUrl,
-    indexName:index,
-    documentType:type,
-  },
+  elasticUrl,
+  indexName:index,
+  documentType:type,
 }                  = require('../../../../config/config');
 const createClient = require('../createClient');
 

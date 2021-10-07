@@ -3,17 +3,6 @@ const shortenUrl        = require(uitPath);
 const { expect }        = require('chai');
 
 describe.only(`The ${name} function`, () => {
-  it('should return an error if the url is not found', (done) => {
-    const longUrl = 'https:';
-
-    shortenUrl(longUrl, (err, result) => {
-      const expected = { status: 400, result: `No record Found for url ${longUrl}` };
-
-      expect(err).to.deep.equal(expected);
-      expect(result).to.equal(undefined);
-      done();
-    });
-  });
 
   it('should return an error if the url is invalid', (done) => {
     const longUrl = 'https';

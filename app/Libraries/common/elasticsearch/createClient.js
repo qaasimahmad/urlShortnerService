@@ -5,7 +5,7 @@ function createClient(elasticURL){
   assert(elasticURL, 'elasticsearchUrl must be passed');
 
   return new elasticSearch.Client({
-    node: elasticURL,
+    host: elasticURL,
   });
 }
 

@@ -2,11 +2,11 @@ const { uitPath, name }                                      = resolveUitPath(__
 const insertSingle                                           = require(uitPath);
 const { expect }                                             = require('chai');
 const { validSampleIndexPayload, invalidSampleIndexPayload } = require('../../../../../commons/sampleIndexPayLoad');
-const {elasticsearch:{indexName}}                            = require('../../../../../../app/config/config');
+const { indexName }                                          = require('../../../../../../app/config/config');
 
-const { indexExists } = require('../../../../../commons/dbInitializer');
+const { indexExists } = require('../../../../../../app/Libraries/common/elasticsearch/connection');
 
-indexExists(indexName);
+indexExists(indexName, ()=>{});
 
 describe.only(`The ${name} function`, () => {
   it("should return data with property 'result' on succcessful indexing ", (done) => {

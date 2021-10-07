@@ -1,5 +1,5 @@
-const createClient                          = require('../createClient');
-const { elasticsearch:{ host:elasticUrl } } = require('../../../../config/config');
+const createClient   = require('../createClient');
+const { elasticUrl } = require('../../../../config/config');
 
 const client = createClient(elasticUrl);
 

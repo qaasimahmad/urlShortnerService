@@ -6,13 +6,14 @@ const logger  = require('./app/Libraries/logger');
 const app = express();
 
 const {
-  host, userName, password, indexName,
-} = config.elasticsearch;
+  elasticUrl, indexName,
+} = config;
 
-require('./app/Libraries/common/elasticsearch/createClient')(host, userName, password);
-const { indexExists } = require('./spec/commons/dbInitializer');
+const { indexExists } = require('./app/Libraries/common/elasticsearch/connection');
 
-indexExists(indexName);
+indexExists(indexName, ()=>{
+
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
