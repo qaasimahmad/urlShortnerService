@@ -3,6 +3,7 @@ const moment                      = require('moment');
 const requestStream               = require('../../Libraries/common/request/stream');
 const { indexName, documentType } = require('../../config/config');
 const insertSingle                = require('../../Libraries/common/elasticsearch/inserts/insertSingle');// eslint-disable-line max-len
+const logger = require('../../Libraries/logger');
 
 function buildPayloadAndSave(items, onSaved){
   const { longUrl, shortUrl } = items;
@@ -32,6 +33,10 @@ function buildPayloadAndSave(items, onSaved){
       return onSaved(err);
     });
   });
+
+  stream.on("error", (error)=>{
+      return onSaved(error);
+  })
 }
 module.exports = buildPayloadAndSave;
 

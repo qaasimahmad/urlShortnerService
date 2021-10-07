@@ -13,6 +13,7 @@ const UrlShortnerController = {
 
       buildPayloadAndSave(items, (err, result) => {
         if(err === null) return res.status(200).json({ error: false, result });
+        return res.status(500).json({ error: true, result: 'Unexpected error occured, you may check the url to be sure it has a valid domain' });// eslint-disable-line max-len
       });
     });
   },
