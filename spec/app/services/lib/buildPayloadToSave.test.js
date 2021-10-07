@@ -18,7 +18,7 @@ describe.only(`The ${name} function`, () => {
     });
   }).timeout(5000);
 
-  it('should return an error if the url is invalid', (done) => {
+  it('should return an error if the domain is invalid', (done) => {
     const longUrl = 'https://www.indicinia.com';
     const items   = { shortUrl, longUrl };
 
