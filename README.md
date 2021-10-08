@@ -96,8 +96,6 @@ npm run tests
 
 2. The app is dockerized.
 
-3. PM2 is used to start and stop the app.
-
 ===============================================================================================================
 # Routes
 Name        | EndPoint(s)                       
