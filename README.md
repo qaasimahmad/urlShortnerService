@@ -90,12 +90,6 @@ npm run tests
 # POSTMAN COLLECTION LINK
   + [checkout the postman collection here](https://www.getpostman.com/collections/fcd16f499e0541b6432c)
 
-# Things to Note
-
-1. Run the aplication at the `Root` of the project
-
-2. The app is dockerized.
-
 ===============================================================================================================
 # Routes
 Name        | EndPoint(s)                       
