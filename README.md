@@ -87,6 +87,16 @@ docker-compose run : To run the app.
 npm run tests
 ```
 
+## .env file
+
+* Add these to the .env file
+
+```
+export ELASTIC_URL=http://localhost:9200
+export PORT=2300
+export BASE_URL=http://localhost:2300/api
+```
+
 # POSTMAN COLLECTION LINK
   + [checkout the postman collection here](https://www.getpostman.com/collections/fcd16f499e0541b6432c)
 
