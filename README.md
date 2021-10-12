@@ -95,6 +95,8 @@ npm run tests
 export ELASTIC_URL=http://localhost:9200
 export PORT=2300
 export BASE_URL=http://localhost:2300/api
+
+run source .env on your shell to make those variables available for use on your machine
 ```
 
 # POSTMAN COLLECTION LINK
